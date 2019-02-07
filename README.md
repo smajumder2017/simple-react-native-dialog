@@ -6,8 +6,11 @@ A simple react native customisable dialog component
 
 ## Screenshots
 1. Dialog with single button
+
 ![](https://media.giphy.com/media/8Zbu0dL7ewF4mYxDXm/giphy.gif)
+
 2.Dialog with 2 buttons and callback
+
 ![](https://media.giphy.com/media/88i6TVGNriKtzOn6qg/giphy.gif)
 
 ## Tech/framework used
