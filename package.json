@@ -1,6 +1,6 @@
 {
   "name": "simple-react-native-dialog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple react native dialog",
   "main": "index.js",
   "scripts": {
