@@ -14,7 +14,7 @@ React-native
 - [react-native](https://facebook.github.io/react-native/)
 
 ## Code Example
-```
+```React
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Dialog from 'simple-react-native-dialog';
@@ -96,18 +96,18 @@ npm: npm install --save simple-react-native-dialog
 ## How to use?
 
 1. import it in your project 
-```
+```React
 import Dialog from 'simple-react-native-dialog';
 ```
 2. Declare it in your component
-```
+```React
 <View>
     <OtherComponents />
     <Dialog />
 </View>
 ```
 3. Trigger it in a function call
-```
+```React
  handleClick = () =>{
     Dialog.showDialog(
       {
