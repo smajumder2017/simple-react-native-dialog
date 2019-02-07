@@ -13,6 +13,8 @@ interface IDispatch {
 class DialogComponent extends Component<DialogState & IDispatch>{
 
   closedialog = () => {
+    if(this.props.primaryButtonPress)
+      this.props.primaryButtonPress();
     this.props.hideDialog();
   }
   render(){
@@ -22,8 +24,8 @@ class DialogComponent extends Component<DialogState & IDispatch>{
         <View style={styles.infoContainer}>
           <Text style={styles.info}>{this.props.info}</Text>
         </View>
-        <TouchableOpacity style={styles.buttonPrimary} onPress={this.closedialog}>
-          <Text style={styles.buttonPrimaryText}>OK</Text>
+        <TouchableOpacity style={[styles.buttonPrimary, this.props.buttonStyle]} onPress={this.closedialog}>
+          <Text style={[styles.buttonPrimaryText, this.props.buttonTextStyle]}>OK</Text>
         </TouchableOpacity>
       </View>
     )

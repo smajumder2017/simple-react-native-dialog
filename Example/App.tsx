@@ -19,6 +19,16 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component {
+  handleClick = () =>{
+    Dialog.showDialog(
+      {
+        header: "Hello",
+        info: "Wow its working",
+        buttonStyle: styles.buttonStyle,
+        buttonTextStyle: styles._buttonTextStyle,
+      }
+    )
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -27,7 +37,7 @@ export default class App extends Component {
         <Text style={styles.instructions}>{instructions}</Text>
         <TouchableOpacity 
           style={styles.button}
-          onPress={()=>{Dialog.showDialog({header:"hello", info:"Cool dialog showed up"})}}  
+          onPress={this.handleClick}  
         >
           <Text style={styles.buttonText}>Show Dialog</Text>
         </TouchableOpacity>
@@ -60,5 +70,11 @@ const styles = StyleSheet.create({
   },
   buttonText:{
     color:"#F5FCFF"
+  },
+  buttonStyle: {
+    backgroundColor: "white"
+  },
+  _buttonTextStyle: {
+    color: "black"
   }
 });
