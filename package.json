@@ -10,5 +10,6 @@
     "react-native"
   ],
   "author": "Subhadip Majumder <aryan.majumder@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "https://github.com/smajumder2017/simple-react-native-dialog.git"
 }
