@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
   },
   _buttonTextStyle: {
     color: "black"
+  },
+  secondaryButtonText:{
+    color: "#23a1d7"
   }
 });
 
