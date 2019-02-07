@@ -33,9 +33,13 @@ export default class App extends Component {
   handleClick = () =>{
     Dialog.showDialog(
       {
+        header: "Hello",
         info: "Wow its working",
-        buttonStyle: styles.buttonStyle,
-        buttonTextStyle: styles._buttonTextStyle,
+        primaryButtonTextStyle: styles._buttonTextStyle,
+        secondaryButtonTextStyle: styles.secondaryButtonText,
+        secondaryButtonPress:()=>{
+          alert('Hello');
+        }
       }
     )
   }
