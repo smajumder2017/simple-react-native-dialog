@@ -24,8 +24,11 @@ export default class App extends Component {
       {
         header: "Hello",
         info: "Wow its working",
-        buttonStyle: styles.buttonStyle,
-        buttonTextStyle: styles._buttonTextStyle,
+        primaryButtonTextStyle: styles._buttonTextStyle,
+        secondaryButtonTextStyle: styles.secondaryButtonText,
+        secondaryButtonPress:()=>{
+          alert('Hello');
+        }
       }
     )
   }
@@ -75,6 +78,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   _buttonTextStyle: {
-    color: "black"
+    color: "#23a1d7"
+  },
+  secondaryButtonText:{
+    color: "#23a1d7"
   }
 });

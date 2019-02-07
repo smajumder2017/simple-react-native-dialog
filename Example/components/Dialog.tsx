@@ -8,9 +8,12 @@ export interface DialogState {
     show: boolean;
     header?: string;
     info: string;
-    buttonStyle?: ButtonStyle,
-    buttonTextStyle?: ButtonTextStyle
-    primaryButtonPress?: ()=>void
+    primaryButtonStyle?: ButtonStyle;
+    primaryButtonTextStyle?: ButtonTextStyle;
+    secondaryButtonStyle?: ButtonStyle;
+    secondaryButtonTextStyle?: ButtonTextStyle;
+    primaryButtonPress?: ()=>void;
+    secondaryButtonPress?: ()=>void;
 }
 
 const SHOW = 'SHOW';
@@ -23,9 +26,12 @@ export interface ShowDialog {
     type: SHOW;
     header?: string;
     info: string;
-    buttonStyle?: ButtonStyle;
-    buttonTextStyle?: ButtonTextStyle;
-    primaryButtonPress?: ()=>void
+    primaryButtonStyle?: ButtonStyle;
+    primaryButtonTextStyle?: ButtonTextStyle;
+    secondaryButtonStyle?: ButtonStyle;
+    secondaryButtonTextStyle?: ButtonTextStyle;
+    primaryButtonPress?: ()=>void;
+    secondaryButtonPress?: ()=>void;
 }
 
 export interface ButtonStyle {
@@ -52,8 +58,10 @@ const initialState: DialogState = {
     show: false,
     header: '',
     info: '',
-    buttonStyle: {},
-    buttonTextStyle: {},
+    primaryButtonStyle: {},
+    primaryButtonTextStyle: {},
+    secondaryButtonStyle:{},
+    secondaryButtonTextStyle:{}
 }
 
 const dialogReducer = (state = initialState, action: DialogAction): DialogState => {
@@ -64,9 +72,12 @@ const dialogReducer = (state = initialState, action: DialogAction): DialogState 
                 show: true,
                 header: action.header, 
                 info: action.info, 
-                buttonStyle: action.buttonStyle, 
-                buttonTextStyle: action.buttonTextStyle,
-                primaryButtonPress: action.primaryButtonPress
+                primaryButtonStyle: action.primaryButtonStyle || {}, 
+                primaryButtonTextStyle: action.primaryButtonTextStyle || {},
+                secondaryButtonStyle: action.primaryButtonStyle || {}, 
+                secondaryButtonTextStyle: action.primaryButtonTextStyle || {},
+                primaryButtonPress: action.primaryButtonPress,
+                secondaryButtonPress: action.secondaryButtonPress
             };
         case 'HIDE':
             return { ...state, show: false };
@@ -79,9 +90,12 @@ const store = createStore(dialogReducer);
 interface DialogParams {
     header?: string;
     info: string;
-    buttonStyle?: ButtonStyle
-    buttonTextStyle?: ButtonTextStyle
-    primaryButtonPress?: ()=>void
+    primaryButtonStyle?: ButtonStyle;
+    primaryButtonTextStyle?: ButtonTextStyle;
+    secondaryButtonStyle?: ButtonStyle;
+    secondaryButtonTextStyle?: ButtonTextStyle;
+    primaryButtonPress?: ()=>void;
+    secondaryButtonPress?: ()=>void;
 }
 
 export default class Dialog extends Component {
