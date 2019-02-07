@@ -27,7 +27,8 @@ class DialogComponent extends Component<DialogState & IDispatch>{
   render(){
     if(this.props.show){
       return(
-      <View style={styles.dialogStyle}>
+        <View style={styles.backdrop}>
+          <View style={styles.dialogStyle}>
         <View style={styles.header}>
             <Text style={styles.headerText}>{this.props.header}</Text>
         </View>
@@ -45,8 +46,8 @@ class DialogComponent extends Component<DialogState & IDispatch>{
           </TouchableOpacity>
           }
         </View>
-        
       </View>
+        </View>
     )
     }
     else {
@@ -62,11 +63,23 @@ function mapStateToProps(state : DialogState){
 export default connect<DialogState, IDispatch, {}, DialogState>(mapStateToProps, {hideDialog})(DialogComponent);
 
 const styles = StyleSheet.create({
+  backdrop:{
+    flex:1,
+    alignItems:"center",
+    justifyContent:"center",
+    position:"absolute",
+    top:0,
+    left:0,
+    backgroundColor: "rgba(0,0,0,0.6)",
+    height: height,
+    width: width,
+    elevation:1
+  },
   dialogStyle: {
-    flex: 1,
-    position: "absolute",
-    left: (width - 350) / 2,
-    top: (height - 190) / 2,
+    // flex: 1,
+    // position: "absolute",
+    // left: (width - 350) / 2,
+    // top: (height - 190) / 2.5,
     backgroundColor: "white",
     width: 350,
     height: 190,
@@ -114,6 +127,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30
   },
   info:{
-    fontSize: 18
+    fontSize: 16
   }
 });
