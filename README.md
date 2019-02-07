@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
 
 ## Installation
 yarn: yarn add simple-react-native-dialog
+
 npm: npm install --save simple-react-native-dialog
 
 ## How to use?
