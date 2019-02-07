@@ -5,7 +5,10 @@ A simple react native customisable dialog component
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 ## Screenshots
+1. Dialog with single button
 ![](https://media.giphy.com/media/8Zbu0dL7ewF4mYxDXm/giphy.gif)
+2.Dialog with 2 buttons and callback
+![](https://media.giphy.com/media/88i6TVGNriKtzOn6qg/giphy.gif)
 
 ## Tech/framework used
 React-native
