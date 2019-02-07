@@ -1,13 +1,19 @@
 import React,{Component} from "react";
 import {View, Text, StyleSheet, Dimensions, TouchableOpacity} from "react-native";
 import {connect} from 'react-redux';
+import {hideDialog} from './Dialog';
+import {DialogState} from './Dialog';
 
 var { width, height } = Dimensions.get("window");
 
-class DialogComponent extends Component{
+interface IDispatch {
+  hideDialog: ()=> void;
+}
+
+class DialogComponent extends Component<DialogState & IDispatch>{
 
   closedialog = () => {
-    this.props.dispatch({type:"HIDE"})
+    this.props.hideDialog();
   }
   render(){
     if(this.props.show){
@@ -28,11 +34,11 @@ class DialogComponent extends Component{
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state : DialogState){
   return state
 }
 
-export default connect(mapStateToProps, null)(DialogComponent);
+export default connect<DialogState, IDispatch, {}, DialogState>(mapStateToProps, {hideDialog})(DialogComponent);
 
 const styles = StyleSheet.create({
   dialogStyle: {

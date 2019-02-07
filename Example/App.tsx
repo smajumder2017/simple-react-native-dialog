@@ -8,7 +8,8 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import Dialog from './components/Dialog';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,14 +18,20 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
+        <TouchableOpacity 
+          style={styles.button}
+          onPress={()=>{Dialog.showDialog({header:"hello", info:"Cool dialog showed up"})}}  
+        >
+          <Text style={styles.buttonText}>Show Dialog</Text>
+        </TouchableOpacity>
+        <Dialog />
       </View>
     );
   }
@@ -47,4 +54,11 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  button:{
+    padding:10,
+    backgroundColor:'#23a1d7'
+  },
+  buttonText:{
+    color:"#F5FCFF"
+  }
 });
