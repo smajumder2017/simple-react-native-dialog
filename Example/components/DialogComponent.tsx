@@ -37,12 +37,12 @@ class DialogComponent extends Component<DialogState & IDispatch>{
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={[styles.buttonPrimary, this.props.primaryButtonStyle]} onPress={()=>this.buttonPress('primary')}>
-            <Text style={[styles.buttonPrimaryText, this.props.primaryButtonTextStyle]}>No</Text>
+            <Text style={[styles.buttonPrimaryText, this.props.primaryButtonTextStyle]}>{this.props.primaryButtonText}</Text>
           </TouchableOpacity>
           {
             this.props.secondaryButtonPress &&
             <TouchableOpacity style={[styles.buttonSecondary, this.props.secondaryButtonStyle]} onPress={()=>this.buttonPress('secondary')}>
-            <Text style={[styles.buttonSecondaryText, this.props.secondaryButtonTextStyle]}>Yes</Text>
+            <Text style={[styles.buttonSecondaryText, this.props.secondaryButtonTextStyle]}>{this.props.secondaryButtonText}</Text>
           </TouchableOpacity>
           }
         </View>
@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
   },
   headerText:{
     fontWeight:"bold",
+    color: "black",
     fontSize: 20
   },
   buttonContainer:{

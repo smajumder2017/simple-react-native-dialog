@@ -24,6 +24,8 @@ export default class App extends Component {
       {
         header: "Hello",
         info: "Wow its working",
+        primaryButtonText:"CANCEL",
+        secondaryButtonText:"CONFIRM",
         primaryButtonTextStyle: styles._buttonTextStyle,
         secondaryButtonTextStyle: styles.secondaryButtonText,
         secondaryButtonPress:()=>{

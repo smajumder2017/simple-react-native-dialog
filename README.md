@@ -35,6 +35,8 @@ export default class App extends Component {
       {
         header: "Hello",
         info: "Wow its working",
+        primaryButtonText:"CANCEL",
+        secondaryButtonText:"CONFIRM",
         primaryButtonTextStyle: styles._buttonTextStyle,
         secondaryButtonTextStyle: styles.secondaryButtonText,
         secondaryButtonPress:()=>{
@@ -121,9 +123,15 @@ import Dialog from 'simple-react-native-dialog';
  handleClick = () =>{
     Dialog.showDialog(
       {
+        header: "Hello",
         info: "Wow its working",
-        buttonStyle: styles.buttonStyle,
-        buttonTextStyle: styles._buttonTextStyle,
+        primaryButtonText:"NO",
+        secondaryButtonText:"YES",
+        primaryButtonTextStyle: styles._buttonTextStyle,
+        secondaryButtonTextStyle: styles.secondaryButtonText,
+        secondaryButtonPress:()=>{
+          alert('Hello');
+        }
       }
     )
   }

@@ -8,6 +8,8 @@ export interface DialogState {
     show: boolean;
     header?: string;
     info: string;
+    primaryButtonText?:String,
+    secondaryButtonText?:String,
     primaryButtonStyle?: ButtonStyle;
     primaryButtonTextStyle?: ButtonTextStyle;
     secondaryButtonStyle?: ButtonStyle;
@@ -26,6 +28,8 @@ export interface ShowDialog {
     type: SHOW;
     header?: string;
     info: string;
+    primaryButtonText?:String,
+    secondaryButtonText?:String,
     primaryButtonStyle?: ButtonStyle;
     primaryButtonTextStyle?: ButtonTextStyle;
     secondaryButtonStyle?: ButtonStyle;
@@ -58,6 +62,8 @@ const initialState: DialogState = {
     show: false,
     header: '',
     info: '',
+    primaryButtonText: 'NO',
+    secondaryButtonText:'YES',
     primaryButtonStyle: {},
     primaryButtonTextStyle: {},
     secondaryButtonStyle:{},
@@ -72,6 +78,8 @@ const dialogReducer = (state = initialState, action: DialogAction): DialogState 
                 show: true,
                 header: action.header, 
                 info: action.info, 
+                primaryButtonText:action.primaryButtonText || "NO",
+                secondaryButtonText:action.secondaryButtonText || "YES",
                 primaryButtonStyle: action.primaryButtonStyle || {}, 
                 primaryButtonTextStyle: action.primaryButtonTextStyle || {},
                 secondaryButtonStyle: action.primaryButtonStyle || {}, 
@@ -90,6 +98,8 @@ const store = createStore(dialogReducer);
 interface DialogParams {
     header?: string;
     info: string;
+    primaryButtonText?:String,
+    secondaryButtonText?:String,
     primaryButtonStyle?: ButtonStyle;
     primaryButtonTextStyle?: ButtonTextStyle;
     secondaryButtonStyle?: ButtonStyle;
