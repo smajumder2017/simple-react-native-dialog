@@ -18,6 +18,7 @@ React-native
 
 ## Configuration
 simple-react-native-dialog takes a configuration object as a param on showDialog() method.
+
 | Property                 | Type          | Required | Example                   | Default     |
 | ------------------------ | ------------- | -------- | ------------------------- | ----------- |
 | header                   | String        | false    |                           | null        |
