@@ -16,6 +16,24 @@ React-native
 <b>Built with</b>
 - [react-native](https://facebook.github.io/react-native/)
 
+## Configuration
+simple-react-native-dialog takes a configuration object as a param on showDialog() method.
+| Property                 | Type          | Required | Example                   | Default     |
+| ------------------------ | ------------- | -------- | ------------------------- | ----------- |
+| header                   | String        | false    |                           | null        |
+| info                     | String        | true     |                           |             |
+| primaryButtonText        | String        | false    |                           | NO          |
+| secondaryButtonText      | String        | false    |                           | YES         |
+| primaryButtonStyle       | Object        | false    | {backgroundColor: String} | transparent |
+| primaryButtonTextStyle   | Object        | false    | {color: String}           | black       |
+| secondaryButtonStyle     | Object        | false    | {backgroundColor: String} | transparent |
+| secondaryButtonTextStyle | Object        | false    | {color: String}           | black       |   
+| buttonAlignment          | String        | false    | "center", "left"          | right       |   
+| primaryButtonPress       | Function      | false    | ()=>{alert('hi')}         | void        |  
+| secondaryButtonPress     | Function      | false    | ()=>{alert('hi')}         | void        |
+
+-To enable the secondary button just pass the secondaryButtonPress property.
+
 ## Code Example
 ```javascript
 import React, {Component} from 'react';
