@@ -25,6 +25,16 @@ class DialogComponent extends Component<DialogState & IDispatch>{
     }
   }
   render(){
+    let buttonContainer ;
+    if(this.props.buttonAlignment === 'center'){
+      buttonContainer = styles.buttonContainerCenter;
+    }
+    else if(this.props.buttonAlignment === 'left'){
+      buttonContainer = styles.buttonContainerLeft;
+    }
+    else {
+      buttonContainer = styles.buttonContainer;
+    }
     if(this.props.show){
       return(
         <View style={styles.backdrop}>
@@ -35,7 +45,7 @@ class DialogComponent extends Component<DialogState & IDispatch>{
         <View style={styles.infoContainer}>
           <Text style={styles.info}>{this.props.info}</Text>
         </View>
-        <View style={styles.buttonContainer}>
+        <View style={buttonContainer}>
           <TouchableOpacity style={[styles.buttonPrimary, this.props.primaryButtonStyle]} onPress={()=>this.buttonPress('primary')}>
             <Text style={[styles.buttonPrimaryText, this.props.primaryButtonTextStyle]}>{this.props.primaryButtonText}</Text>
           </TouchableOpacity>
@@ -76,10 +86,6 @@ const styles = StyleSheet.create({
     elevation:1
   },
   dialogStyle: {
-    // flex: 1,
-    // position: "absolute",
-    // left: (width - 350) / 2,
-    // top: (height - 190) / 2.5,
     backgroundColor: "white",
     width: 350,
     height: 190,
@@ -99,6 +105,14 @@ const styles = StyleSheet.create({
   buttonContainer:{
     flexDirection: "row",
     justifyContent: "flex-end"
+  },
+  buttonContainerLeft:{
+    flexDirection: "row",
+    justifyContent: "flex-start"
+  },
+  buttonContainerCenter:{
+    flexDirection: "row",
+    justifyContent: "center"
   },
   buttonPrimary:{
     alignItems:"center",

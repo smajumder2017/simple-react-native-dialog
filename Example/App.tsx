@@ -28,6 +28,7 @@ export default class App extends Component {
         secondaryButtonText:"CONFIRM",
         primaryButtonTextStyle: styles._buttonTextStyle,
         secondaryButtonTextStyle: styles.secondaryButtonText,
+        buttonAlignment: "center",
         secondaryButtonPress:()=>{
           alert('Hello');
         }
